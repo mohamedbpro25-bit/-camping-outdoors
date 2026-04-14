@@ -300,7 +300,10 @@
       }
 
       if (!response.ok || !payload || !payload.token) {
-        throw new Error("invalid_credentials");
+        const backendMessage = payload && (payload.error || payload.message)
+          ? String(payload.error || payload.message)
+          : "Réponse invalide du serveur";
+        throw new Error(`API ${response.status}: ${backendMessage}`);
       }
 
       return payload.token;
@@ -507,7 +510,8 @@
         loginMessage.innerHTML = "";
         await applyAndRender();
       } catch (error) {
-        loginMessage.innerHTML = '<div class="warning">Connexion admin impossible. Vérifiez vos identifiants ou la disponibilité de l\'API backend.</div>';
+        const details = error && error.message ? error.message : "Erreur inconnue";
+        loginMessage.innerHTML = `<div class="warning">Connexion admin impossible.<br />${escapeHtml(details)}<br /><span class="muted">Endpoint: ${escapeHtml(ADMIN_LOGIN_ENDPOINT)}</span></div>`;
       }
     });
 
