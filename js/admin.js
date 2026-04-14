@@ -1,8 +1,10 @@
 (function () {
   const AUTH_KEY = "campingOutdoorsAdminAuth";
   const AUTH_TOKEN_KEY = "campingOutdoorsAdminToken";
-  const ADMIN_LOGIN_ENDPOINT = "/api/admin/login";
-  const ADMIN_RESERVATIONS_ENDPOINT = "/api/admin/reservations";
+  
+  // URLs depuis config globale (définie dans config.js)
+  const ADMIN_LOGIN_ENDPOINT = window.APP_CONFIG?.ADMIN_LOGIN || "/api/admin/login";
+  const ADMIN_RESERVATIONS_ENDPOINT = window.APP_CONFIG?.ADMIN_RESERVATIONS || "/api/admin/reservations";
 
   function formatMoney(amount) {
     return `${Number(amount || 0).toFixed(2)} TND`;

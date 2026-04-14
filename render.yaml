@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: camping-outdoors-api
+    plan: free
+    runtime: node
+    buildCommand: cd backend && npm install
+    startCommand: cd backend && npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DB_HOST
+        value: camping-outdoors.cjw8vjnrv9bl.eu-west-1.rds.amazonaws.com
+        scope: build
+      - key: DB_USER
+        value: admin
+        scope: build
+      - key: DB_PASSWORD
+        generateValue: true
+      - key: DB_NAME
+        value: camping_outdoors
+      - key: SESSION_SECRET
+        generateValue: true
+      - key: PORT
+        value: 3001

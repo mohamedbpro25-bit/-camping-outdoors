@@ -1,0 +1,22 @@
+# Netlify Configuration for Camping Outdoors
+
+[build]
+  command = "echo 'Static site - no build required'"
+  publish = "."
+
+[dev]
+  command = "live-server"
+  port = 3000
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Headers for API calls
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+    Access-Control-Allow-Methods = "GET, POST, PUT, PATCH, DELETE, OPTIONS"
+    Access-Control-Allow-Headers = "Content-Type, Authorization"
