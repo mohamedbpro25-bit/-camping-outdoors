@@ -10,6 +10,69 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
     <link rel="stylesheet" href="css/style.css" />
+    <style>
+      .payment-methods {
+        display: flex;
+        gap: 16px;
+        margin-bottom: 8px;
+        flex-wrap: wrap;
+      }
+      .payment-method-card {
+        flex: 1;
+        min-width: 180px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 16px 20px;
+        border: 2px solid var(--line);
+        border-radius: var(--radius);
+        cursor: pointer;
+        background: var(--white);
+        transition: border-color 0.2s, background 0.2s;
+      }
+      .payment-method-card input[type="radio"] {
+        display: none;
+      }
+      .payment-method-card.active {
+        border-color: var(--wood);
+        background: var(--beige);
+      }
+      .payment-method-card .method-icon {
+        font-size: 1.5rem;
+        color: var(--wood);
+      }
+      .payment-method-card .method-label {
+        font-weight: 600;
+        font-size: 0.95rem;
+        color: var(--ink);
+      }
+      .mandat-info-box {
+        display: flex;
+        align-items: flex-start;
+        gap: 16px;
+        background: #fffbf0;
+        border: 2px solid var(--gold);
+        border-radius: var(--radius);
+        padding: 20px 24px;
+        margin-top: 1.5rem;
+      }
+      .mandat-info-box i {
+        font-size: 1.6rem;
+        color: var(--clay);
+        margin-top: 2px;
+        flex-shrink: 0;
+      }
+      .mandat-info-box p {
+        margin: 0 0 8px;
+        line-height: 1.6;
+        color: var(--ink);
+      }
+      .mandat-info-box p:last-child {
+        margin-bottom: 0;
+        color: var(--text-soft);
+        font-size: 0.9rem;
+      }
+    </style>
   </head>
   <body>
     <header class="topbar">
@@ -51,30 +114,64 @@
           </article>
           <article class="surface">
             <div class="surface-body">
-              <h3>Informations de paiement</h3>
-              <div class="form-grid">
-                <div class="field">
-                  <label for="cardName">Nom sur la carte</label>
-                  <input id="cardName" placeholder="Nom du porteur" disabled />
+              <h3>Choisissez votre mode de paiement</h3>
+
+              <!-- Sélecteur de méthode -->
+              <div class="payment-methods">
+                <label class="payment-method-card active" id="methodCardLabel">
+                  <input type="radio" name="paymentMethod" value="card" checked />
+                  <span class="method-icon"><i class="fa-solid fa-credit-card"></i></span>
+                  <span class="method-label">Carte bancaire</span>
+                </label>
+                <label class="payment-method-card" id="methodMandat Label">
+                  <input type="radio" name="paymentMethod" value="mandat" />
+                  <span class="method-icon"><i class="fa-solid fa-envelope-open-text"></i></span>
+                  <span class="method-label">Mandat La Poste tunisienne</span>
+                </label>
+              </div>
+
+              <!-- Paiement carte bancaire -->
+              <div id="cardPaymentSection">
+                <div class="form-grid" style="margin-top:1.5rem">
+                  <div class="field">
+                    <label for="cardName">Nom sur la carte</label>
+                    <input id="cardName" placeholder="Nom du porteur" disabled />
+                  </div>
+                  <div class="field">
+                    <label for="cardNumber">Numéro de carte</label>
+                    <input id="cardNumber" placeholder="•••• •••• •••• ••••" disabled />
+                  </div>
+                  <div class="field">
+                    <label for="cardDate">Expiration</label>
+                    <input id="cardDate" placeholder="MM/AA" disabled />
+                  </div>
+                  <div class="field">
+                    <label for="cardCvc">CVC</label>
+                    <input id="cardCvc" placeholder="•••" disabled />
+                  </div>
                 </div>
-                <div class="field">
-                  <label for="cardNumber">Numéro de carte</label>
-                  <input id="cardNumber" placeholder="•••• •••• •••• ••••" disabled />
-                </div>
-                <div class="field">
-                  <label for="cardDate">Expiration</label>
-                  <input id="cardDate" placeholder="MM/AA" disabled />
-                </div>
-                <div class="field">
-                  <label for="cardCvc">CVC</label>
-                  <input id="cardCvc" placeholder="•••" disabled />
+                <div class="subtle-note">Les champs sont préparés visuellement pour une future intégration sécurisée.</div>
+                <div class="button-row">
+                  <button id="payNowBtn" class="btn btn-primary"><i class="fa-solid fa-lock"></i> Simuler paiement réussi</button>
+                  <a class="btn btn-light" href="reservation.html">Modifier ma demande</a>
                 </div>
               </div>
-              <div class="subtle-note">Les champs sont préparés visuellement pour une future intégration sécurisée.</div>
-              <div class="button-row">
-                <button id="payNowBtn" class="btn btn-primary"><i class="fa-solid fa-lock"></i> Simuler paiement réussi</button>
-                <a class="btn btn-light" href="reservation.html">Modifier ma demande</a>
+
+              <!-- Paiement Mandat La Poste -->
+              <div id="mandatPaymentSection" style="display:none">
+                <div class="mandat-info-box">
+                  <i class="fa-solid fa-circle-info"></i>
+                  <div>
+                    <p><strong>Veuillez nous contacter pour payer par Mandat La Poste tunisienne.</strong></p>
+                    <p>Après nous avoir contactés, nous vous fournirons les informations nécessaires pour effectuer votre mandat postal.</p>
+                  </div>
+                </div>
+                <div class="button-row" style="margin-top:1.5rem">
+                  <a class="btn btn-primary" href="contact.html"><i class="fa-solid fa-phone"></i> Nous contacter</a>
+                  <a class="btn btn-light" href="reservation.html">Modifier ma demande</a>
+                </div>
               </div>
+
             </div>
           </article>
         </div>
@@ -86,6 +183,20 @@
     <script src="js/calendrier.js"></script>
     <script src="js/reservation.js"></script>
     <script src="js/main.js"></script>
+    <script>
+      // Toggle payment method
+      document.querySelectorAll('input[name="paymentMethod"]').forEach(function(radio) {
+        radio.addEventListener('change', function() {
+          var isCard = this.value === 'card';
+          document.getElementById('cardPaymentSection').style.display = isCard ? '' : 'none';
+          document.getElementById('mandatPaymentSection').style.display = isCard ? 'none' : '';
+          document.querySelectorAll('.payment-method-card').forEach(function(lbl) {
+            lbl.classList.remove('active');
+          });
+          this.closest('.payment-method-card').classList.add('active');
+        });
+      });
+    </script>
   </body>
 </html>
 
