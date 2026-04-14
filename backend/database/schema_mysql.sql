@@ -7,7 +7,7 @@ CREATE TABLE IF NOT EXISTS clients (
   email VARCHAR(190) NOT NULL UNIQUE,
   phone VARCHAR(40) NOT NULL,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  updated_at DATETIME NULL,
   INDEX idx_email (email)
 );
 
@@ -17,15 +17,14 @@ CREATE TABLE IF NOT EXISTS admin_users (
   password_hash TEXT NOT NULL,
   is_active BOOLEAN DEFAULT TRUE,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  updated_at DATETIME NULL,
   last_login_at TIMESTAMP NULL,
   INDEX idx_username (username)
 );
 
 -- Seed admin user avec bcrypt hash de "Diablox9@"
--- Hash généré avec bcryptjs: $2a$10$xxx (à remplacer avec le vrai hash)
 INSERT INTO admin_users (username, password_hash, is_active)
-VALUES ('Admin', '$2a$10$q.qPh40fHG9X6IKWxkG9rO.PO3AZMG4PdP9d7fvX/2pG8F9xwLkUi', TRUE)
+VALUES ('Admin', '$2a$10$Y0Ie0112jGoflcLIyo4VSObCT4ABhhyG8z9pQPpAVPBzuC1IH5wiS', TRUE)
 ON DUPLICATE KEY UPDATE is_active = TRUE;
 
 CREATE TABLE IF NOT EXISTS reservations (
@@ -42,7 +41,7 @@ CREATE TABLE IF NOT EXISTS reservations (
   amount_tnd DECIMAL(12,2) NOT NULL,
   status VARCHAR(20) DEFAULT 'confirmed',
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  updated_at DATETIME NULL,
   canceled_at TIMESTAMP NULL,
   FOREIGN KEY (client_id) REFERENCES clients(id) ON DELETE RESTRICT,
   CHECK (checkout_date > checkin_date),

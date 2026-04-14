@@ -17,8 +17,8 @@ router.post('/login', async (req, res) => {
 
     const connection = await pool.getConnection();
     const [rows] = await connection.query(
-      'SELECT id, username, password_hash FROM admin_users WHERE username = ? AND is_active = TRUE',
-      [username.toLowerCase()]
+      'SELECT id, username, password_hash FROM admin_users WHERE LOWER(username) = LOWER(?) AND is_active = TRUE',
+      [username]
     );
     connection.release();
 
