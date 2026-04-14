@@ -1,6 +1,5 @@
 const express = require('express');
 const cors = require('cors');
-const session = require('express-session');
 require('dotenv').config();
 
 const adminRoutes = require('./routes/admin');
@@ -12,20 +11,14 @@ const PORT = process.env.PORT || 3001;
 // Middleware
 app.use(express.json());
 app.use(cors({
-  origin: ['http://localhost:5500', 'http://localhost:3000', 'http://localhost:8080'],
-  credentials: true
-}));
-
-// Session
-app.use(session({
-  secret: process.env.SESSION_SECRET || 'dev-secret-key',
-  resave: false,
-  saveUninitialized: true,
-  cookie: {
-    secure: process.env.NODE_ENV === 'production',
-    httpOnly: true,
-    sameSite: 'lax'
-  }
+  origin: [
+    'http://localhost:5500',
+    'http://localhost:3000',
+    'http://localhost:8080',
+    'https://delightful-liger-e56d5d.netlify.app'
+  ],
+  methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
 // Routes

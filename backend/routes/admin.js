@@ -2,6 +2,7 @@ const express = require('express');
 const bcryptjs = require('bcryptjs');
 const pool = require('../database');
 const { requireAdmin } = require('../middleware');
+const { issueToken, revokeToken } = require('../authStore');
 
 const router = express.Router();
 
@@ -32,11 +33,8 @@ router.post('/login', async (req, res) => {
       return res.status(401).json({ error: 'Invalid credentials' });
     }
 
-    // Set session
-    req.session.adminId = admin.id;
-    req.session.adminUsername = admin.username;
-
-    return res.json({ token: req.sessionID, message: 'Login successful' });
+    const token = issueToken(admin.id, admin.username);
+    return res.json({ token, message: 'Login successful' });
   } catch (error) {
     console.error('Login error:', error);
     return res.status(500).json({ error: 'Server error' });
@@ -174,12 +172,10 @@ router.get('/revenue', requireAdmin, async (req, res) => {
 
 // POST /api/admin/logout
 router.post('/logout', (req, res) => {
-  req.session.destroy((err) => {
-    if (err) {
-      return res.status(500).json({ error: 'Logout failed' });
-    }
-    return res.json({ message: 'Logged out' });
-  });
+  const header = req.headers.authorization || '';
+  const token = header.startsWith('Bearer ') ? header.slice(7) : null;
+  revokeToken(token);
+  return res.json({ message: 'Logged out' });
 });
 
 module.exports = router;

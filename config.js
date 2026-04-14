@@ -9,11 +9,11 @@ const ENV = {
     ADMIN_REVENUE: 'http://localhost:3001/api/admin/revenue'
   },
   PRODUCTION: {
-    API_BASE: 'https://camping-outdoors-api.onrender.com',
-    ADMIN_LOGIN: 'https://camping-outdoors-api.onrender.com/api/admin/login',
-    ADMIN_RESERVATIONS: 'https://camping-outdoors-api.onrender.com/api/admin/reservations',
-    ADMIN_CLIENTS: 'https://camping-outdoors-api.onrender.com/api/admin/clients',
-    ADMIN_REVENUE: 'https://camping-outdoors-api.onrender.com/api/admin/revenue'
+    API_BASE: 'https://camping-outdoors.onrender.com',
+    ADMIN_LOGIN: 'https://camping-outdoors.onrender.com/api/admin/login',
+    ADMIN_RESERVATIONS: 'https://camping-outdoors.onrender.com/api/admin/reservations',
+    ADMIN_CLIENTS: 'https://camping-outdoors.onrender.com/api/admin/clients',
+    ADMIN_REVENUE: 'https://camping-outdoors.onrender.com/api/admin/revenue'
   }
 };
 
