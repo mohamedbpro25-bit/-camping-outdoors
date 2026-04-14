@@ -25,6 +25,11 @@ app.use(cors({
 app.use('/api/admin', adminRoutes);
 app.use('/api/reservations', reservationRoutes);
 
+// Home
+app.get('/', (req, res) => {
+  res.json({ message: 'Camping Outdoors API', version: '1.0', health: '/api/health' });
+});
+
 // Health check
 app.get('/api/health', (req, res) => {
   res.json({ status: 'OK', timestamp: new Date().toISOString() });
