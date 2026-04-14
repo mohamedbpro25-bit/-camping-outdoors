@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <rect width="1200" height="800" fill="#1f2f1d"/>
+  <circle cx="980" cy="140" r="60" fill="#f3d48e" opacity="0.9"/>
+  <path d="M0 520C160 480 330 560 520 520C690 485 820 430 1010 455C1090 466 1150 490 1200 505V800H0Z" fill="#2d5a27"/>
+  <ellipse cx="600" cy="620" rx="270" ry="95" fill="#304a2b"/>
+  <path d="M590 350C645 420 670 480 630 555C690 535 745 470 730 405C718 350 671 305 640 250C632 302 610 333 590 350Z" fill="#ff9d35"/>
+  <path d="M565 405C602 450 625 500 590 550C640 535 670 490 662 445C654 406 628 370 602 330C596 362 582 387 565 405Z" fill="#ffd46d"/>
+  <rect x="475" y="555" width="240" height="16" rx="8" fill="#5b3b22" transform="rotate(14 595 563)"/>
+  <rect x="475" y="555" width="240" height="16" rx="8" fill="#7b4d29" transform="rotate(-14 595 563)"/>
+  <text x="70" y="105" font-family="Poppins, Segoe UI, sans-serif" font-size="48" font-weight="700" fill="#f5f0e6">Soirées feu de camp</text>
+  <text x="70" y="156" font-family="Poppins, Segoe UI, sans-serif" font-size="26" fill="#dcc7a4">Convivialité, chaleur et observation des étoiles en pleine forêt.</text>
+</svg>

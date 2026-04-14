@@ -1,0 +1,74 @@
+[
+  {
+    "id": "CAMP-2024-A0011",
+    "type": "tiny",
+    "hebergement_id": "1",
+    "dates": {
+      "checkin": "2024-07-10",
+      "checkout": "2024-07-15"
+    },
+    "personnes": {
+      "adultes": 2,
+      "enfants": 0
+    },
+    "prix": 1000,
+    "nom": "Exemple Client",
+    "email": "demo@camping-outdoors.tn",
+    "tel": "+21600000000",
+    "statut": "confirmee"
+  },
+  {
+    "id": "CAMP-2024-A0012",
+    "type": "tiny",
+    "hebergement_id": "3",
+    "dates": {
+      "checkin": "2024-07-20",
+      "checkout": "2024-07-25"
+    },
+    "personnes": {
+      "adultes": 4,
+      "enfants": 0
+    },
+    "prix": 2000,
+    "nom": "Exemple Client",
+    "email": "demo@camping-outdoors.tn",
+    "tel": "+21600000000",
+    "statut": "confirmee"
+  },
+  {
+    "id": "CAMP-2024-A0013",
+    "type": "emplacement",
+    "hebergement_id": "terrain",
+    "dates": {
+      "checkin": "2024-08-05",
+      "checkout": "2024-08-10"
+    },
+    "personnes": {
+      "adultes": 2,
+      "enfants": 1
+    },
+    "prix": 50,
+    "nom": "Exemple Client",
+    "email": "demo@camping-outdoors.tn",
+    "tel": "+21600000000",
+    "statut": "confirmee"
+  },
+  {
+    "id": "CAMP-2024-A0014",
+    "type": "tente",
+    "hebergement_id": "standard",
+    "dates": {
+      "checkin": "2024-08-12",
+      "checkout": "2024-08-18"
+    },
+    "personnes": {
+      "adultes": 2,
+      "enfants": 0
+    },
+    "prix": 90,
+    "nom": "Exemple Client",
+    "email": "demo@camping-outdoors.tn",
+    "tel": "+21600000000",
+    "statut": "confirmee"
+  }
+]

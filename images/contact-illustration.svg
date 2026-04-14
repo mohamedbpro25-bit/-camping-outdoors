@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <rect width="1200" height="800" fill="#f5f0e6"/>
+  <rect x="120" y="160" width="960" height="500" rx="30" fill="#fffdf9" stroke="#d8cbb8" stroke-width="8"/>
+  <rect x="190" y="240" width="380" height="250" rx="20" fill="#e8f0ea"/>
+  <path d="M220 280H540L380 390Z" fill="#8b5a2b"/>
+  <path d="M220 280L380 390L540 280" fill="none" stroke="#6c431e" stroke-width="12" stroke-linejoin="round"/>
+  <rect x="655" y="250" width="270" height="28" rx="14" fill="#d9ccb9"/>
+  <rect x="655" y="310" width="320" height="24" rx="12" fill="#eadfce"/>
+  <rect x="655" y="360" width="290" height="24" rx="12" fill="#eadfce"/>
+  <rect x="655" y="410" width="250" height="24" rx="12" fill="#eadfce"/>
+  <rect x="655" y="485" width="180" height="52" rx="16" fill="#2d5a27"/>
+  <text x="70" y="105" font-family="Poppins, Segoe UI, sans-serif" font-size="48" font-weight="700" fill="#2d5a27">Contact rapide</text>
+  <text x="70" y="155" font-family="Poppins, Segoe UI, sans-serif" font-size="26" fill="#6d655c">Demandes groupes, disponibilités et informations pratiques.</text>
+</svg>

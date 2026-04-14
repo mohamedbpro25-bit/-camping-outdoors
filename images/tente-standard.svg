@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700">
+  <rect width="1200" height="700" fill="#f7f1e7"/>
+  <circle cx="1010" cy="120" r="54" fill="#efca7f"/>
+  <path d="M0 390C190 340 340 430 560 392C730 362 980 280 1200 320V700H0Z" fill="#5b804a"/>
+  <rect x="0" y="445" width="1200" height="255" fill="#2d5a27"/>
+  <path d="M285 520L520 255L760 520Z" fill="#8b5a2b"/>
+  <path d="M360 520L520 330L680 520Z" fill="#f2e6cf"/>
+  <line x1="520" y1="255" x2="520" y2="520" stroke="#6c431e" stroke-width="8"/>
+  <text x="70" y="92" font-family="Poppins, Segoe UI, sans-serif" font-size="48" font-weight="700" fill="#2d5a27">Tente standard</text>
+  <text x="70" y="142" font-family="Poppins, Segoe UI, sans-serif" font-size="26" fill="#6d655c">2 à 3 personnes • Matelas gonflables • Lampes incluses</text>
+</svg>

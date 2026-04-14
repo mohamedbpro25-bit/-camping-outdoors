@@ -1,0 +1,168 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Réservation - Camping Outdoors</title>
+    <meta name="description" content="Réservez votre tiny house, emplacement ou tente au Centre de Camping Outdoors." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container nav-wrap">
+        <a class="brand" href="index.html"><i class="fa-solid fa-campground"></i><span>Camping Outdoors - Bni Mtir</span></a>
+        <button class="menu-btn" id="menuBtn" aria-label="Ouvrir le menu"><i class="fa-solid fa-bars"></i></button>
+        <nav class="nav-links" id="navLinks">
+          <a href="index.html">Accueil</a>
+          <a href="hebergements.html">Hébergements</a>
+          <a href="tarifs.html">Tarifs & Groupes</a>
+          <a href="presentation.html">Présentation</a>
+          <a href="contact.html">Contact</a>
+          <a href="verification.html">Suivi réservation</a>
+          <a href="avis.html">Avis</a>
+          <a class="active" href="reservation.html">Réserver</a>
+        </nav>
+      </div>
+    </header>
+
+    <section class="page-banner">
+      <div class="container">
+        <div class="eyebrow"><i class="fa-solid fa-calendar-days"></i> Réservation sans compte</div>
+        <h1>Un tunnel simple, propre et crédible.</h1>
+        <p>Choisissez votre hébergement, vos dates, vos voyageurs et laissez le récapitulatif se mettre à jour en direct avant d'aller au paiement.</p>
+      </div>
+    </section>
+
+    <main>
+      <section class="container section-block fade-in">
+        <div class="booking-shell">
+          <article class="surface">
+            <div class="surface-body">
+              <div class="section-title">
+                <h2>Finaliser votre demande</h2>
+                <p>Le moteur vérifie les dates, la capacité et la règle groupe avant de poursuivre.</p>
+              </div>
+
+              <form id="reservationForm" class="form-grid" method="post">
+                <div class="field">
+                  <label for="nomClient">Nom complet</label>
+                  <input id="nomClient" name="nomClient" autocomplete="name" required />
+                </div>
+                <div class="field">
+                  <label for="emailClient">Email</label>
+                  <input id="emailClient" name="emailClient" type="email" autocomplete="email" required />
+                </div>
+                <div class="field">
+                  <label for="telClient">Téléphone</label>
+                  <input id="telClient" name="telClient" type="tel" autocomplete="tel" required />
+                </div>
+                <div class="field">
+                  <label for="typeHebergement">Type d'hébergement</label>
+                  <select id="typeHebergement" name="typeHebergement" required>
+                    <option value="">Sélectionner</option>
+                    <option value="tiny">Tiny House</option>
+                    <option value="emplacement">Emplacement nu</option>
+                    <option value="tente">Tente standard</option>
+                  </select>
+                </div>
+                <div class="field" id="tinyChoiceWrap" style="display: none;">
+                  <label for="tinyChoice">Tiny House</label>
+                  <select id="tinyChoice" name="tinyChoice">
+                    <option value="1">Tiny House 1 (2 pers.)</option>
+                    <option value="2">Tiny House 2 (2 pers.)</option>
+                    <option value="3">Tiny House 3 (4 pers.)</option>
+                    <option value="4">Tiny House 4 (4 pers.)</option>
+                    <option value="5">Tiny House 5 (4 pers.)</option>
+                    <option value="6">Tiny House 6 (6 pers.)</option>
+                    <option value="7">Tiny House 7 (6 pers.)</option>
+                    <option value="8">Tiny House 8 (6 pers.)</option>
+                  </select>
+                </div>
+                <div class="field" id="electricityWrap" style="display: none; grid-column: 1 / -1;">
+                  <label>Options emplacement</label>
+                  <label class="field-inline" for="electricite">
+                    <input id="electricite" name="electricite" type="checkbox" />
+                    Ajouter l'accès électricité (+8 TND / nuit)
+                  </label>
+                </div>
+                <div class="field">
+                  <label for="checkin">Check-in</label>
+                  <input id="checkin" name="checkin" type="date" autocomplete="off" required />
+                </div>
+                <div class="field">
+                  <label for="checkout">Check-out</label>
+                  <input id="checkout" name="checkout" type="date" autocomplete="off" required />
+                </div>
+                <div class="field">
+                  <label for="adultes">Adultes</label>
+                  <input id="adultes" name="adultes" type="number" min="1" max="12" value="1" inputmode="numeric" required />
+                </div>
+                <div class="field">
+                  <label for="enfants">Enfants</label>
+                  <input id="enfants" name="enfants" type="number" min="0" max="12" value="0" inputmode="numeric" required />
+                </div>
+                <div class="field" style="grid-column: 1 / -1;">
+                  <label for="notesClient">Notes ou précisions</label>
+                  <textarea id="notesClient" name="notesClient" autocomplete="off" placeholder="Heure d'arrivée estimée, besoin particulier, demande d'information complémentaire."></textarea>
+                </div>
+                <div style="grid-column: 1 / -1;">
+                  <button class="btn btn-primary" type="submit" id="reserveBtn"><i class="fa-solid fa-calendar-check"></i> Continuer vers le paiement</button>
+                </div>
+              </form>
+
+              <div id="groupMessage" aria-live="polite"></div>
+              <div id="capacityMessage" aria-live="polite"></div>
+              <div id="dateMessage" aria-live="polite"></div>
+            </div>
+          </article>
+
+          <aside class="sticky-panel">
+            <article class="panel-box">
+              <h3>Étapes</h3>
+              <ul class="step-list">
+                <li><span class="step-number">1</span><div><strong>Choix du séjour</strong><br /><span class="muted">Type, dates, voyageurs et options.</span></div></li>
+                <li><span class="step-number">2</span><div><strong>Paiement</strong><br /><span class="muted">Sécurisé et intégré à la plateforme.</span></div></li>
+                <li><span class="step-number">3</span><div><strong>Confirmation</strong><br /><span class="muted">Code unique et suivi réservation en ligne.</span></div></li>
+              </ul>
+            </article>
+
+            <article class="summary-box" id="summaryBox">
+              <h3>Récapitulatif en temps réel</h3>
+              <div id="summaryContent" class="muted">Complétez le formulaire pour voir le détail du séjour.</div>
+            </article>
+
+            <article class="panel-box">
+              <h3>Disponibilités connues</h3>
+              <div id="availabilityPreview" class="availability-list">
+                <div class="availability-item">Choisissez un hébergement pour voir ses périodes déjà réservées.</div>
+              </div>
+            </article>
+
+            <article class="notice-box">
+              <h3>Bon à savoir</h3>
+              <ul class="check-list">
+                <li><i class="fa-solid fa-check"></i> Minimum 1 nuit</li>
+                <li><i class="fa-solid fa-check"></i> Dates passées bloquées</li>
+                <li><i class="fa-solid fa-check"></i> Pour plus de 6 personnes, contactez-nous directement</li>
+                <li><i class="fa-solid fa-check"></i> Annulation possible depuis la page de suivi réservation</li>
+              </ul>
+            </article>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer"><div class="container footer-grid"><div><div class="footer-title">Réservation</div><p>Moteur de réservation en ligne.</p></div><div><div class="footer-title">Besoin d'aide</div><p><a href="contact.html">Contacter l'équipe</a></p></div><div><div class="footer-title">Suivi réservation</div><p><a href="verification.html">Retrouver une réservation</a></p></div></div></footer>
+
+    <script src="js/calendrier.js"></script>
+    <script src="js/reservation.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
+
+
+

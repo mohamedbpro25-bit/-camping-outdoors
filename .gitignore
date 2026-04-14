@@ -1,0 +1,27 @@
+# Dépendances
+node_modules/
+vendor/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Builds
+dist/
+build/
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Variables d'environnement (ne jamais committer)
+.env
+.env.local
+.env.production
+
+# Éditeurs
+.vscode/settings.json
+.idea/
+*.suo
+*.user

@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact - Camping Outdoors</title>
+    <meta name="description" content="Contactez le Centre de Camping Outdoors pour toute question, demande groupe ou information pratique." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container nav-wrap">
+        <a class="brand" href="index.html"><i class="fa-solid fa-campground"></i><span>Camping Outdoors - Bni Mtir</span></a>
+        <button class="menu-btn" id="menuBtn" aria-label="Ouvrir le menu"><i class="fa-solid fa-bars"></i></button>
+        <nav class="nav-links" id="navLinks">
+          <a href="index.html">Accueil</a>
+          <a href="hebergements.html">Hébergements</a>
+          <a href="tarifs.html">Tarifs & Groupes</a>
+          <a href="presentation.html">Présentation</a>
+          <a class="active" href="contact.html">Contact</a>
+          <a href="verification.html">Suivi réservation</a>
+          <a href="avis.html">Avis</a>
+          <a href="reservation.html">Réserver</a>
+        </nav>
+      </div>
+    </header>
+
+    <section class="page-banner">
+      <div class="container">
+        <div class="eyebrow"><i class="fa-solid fa-headset"></i> Contact & demandes groupes</div>
+        <h1>Parlez directement avec l'équipe.</h1>
+        <p>Pour un devis groupe, une question pratique ou une demande particulière, le contact reste simple et visible dans tout le parcours.</p>
+      </div>
+    </section>
+
+    <main>
+      <section class="container section-block fade-in">
+        <div class="contact-layout">
+          <article class="surface">
+            <div class="surface-body">
+              <div class="section-title">
+                <h2>Envoyer un message</h2>
+                <p>Vos demandes sont traitées rapidement par notre équipe.</p>
+              </div>
+              <form id="contactForm" class="form-grid" method="post">
+                <div class="field">
+                  <label for="nom">Nom</label>
+                  <input id="nom" name="nom" autocomplete="name" required />
+                </div>
+                <div class="field">
+                  <label for="email">Email</label>
+                  <input id="email" name="email" type="email" autocomplete="email" required />
+                </div>
+                <div class="field">
+                  <label for="telephone">Téléphone</label>
+                  <input id="telephone" name="telephone" type="tel" autocomplete="tel" required />
+                </div>
+                <div class="field" style="grid-column: 1 / -1;">
+                  <label for="message">Message</label>
+                  <textarea id="message" name="message" placeholder="Précisez votre demande, vos dates ou votre besoin groupe." required></textarea>
+                </div>
+                <div style="grid-column: 1 / -1;">
+                  <button class="btn btn-primary" type="submit"><i class="fa-solid fa-paper-plane"></i> Envoyer</button>
+                </div>
+              </form>
+              <div id="contactFeedback"></div>
+            </div>
+          </article>
+
+          <div class="grid">
+            <article class="surface">
+              <img class="media-cover" src="images/contact-illustration.svg" alt="Illustration de contact" />
+            </article>
+            <article class="contact-card">
+              <h3>Coordonnées</h3>
+              <ul class="icon-list">
+                <li><i class="fa-solid fa-phone"></i> +216 20 000 000</li>
+                <li><i class="fa-solid fa-envelope"></i> contact@camping-outdoors.tn</li>
+                <li><i class="fa-brands fa-instagram"></i> <a href="https://www.instagram.com/benimtiroutdoors?igsh=NGlkaWE1OTltMG52" target="_blank" rel="noopener noreferrer">@benimtiroutdoors</a></li>
+                <li><i class="fa-solid fa-location-dot"></i> Beni M'Tir 8114, Tunisie</li>
+                <li><i class="fa-regular fa-clock"></i> Ouvert de 8h à 20h</li>
+              </ul>
+            </article>
+            <article class="notice-box">
+              <h3>Demandes groupes</h3>
+              <p>Pour plus de 6 personnes, veuillez nous contacter directement via cette page.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="container section-block fade-in">
+        <article class="surface">
+          <div class="surface-body">
+            <h3>Carte Google Maps</h3>
+            <iframe
+              title="Google Maps Bni Mtir"
+              src="https://maps.google.com/maps?q=Beni%20M'Tir%20Tunisia&t=&z=11&ie=UTF8&iwloc=&output=embed"
+              style="width: 100%; height: 320px; border: 0; border-radius: 12px;"
+              loading="lazy"
+            ></iframe>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer class="footer"><div class="container footer-grid"><div><div class="footer-title">Contact</div><p>Page prête pour du vrai support client et de futures automatisations email.</p></div><div><div class="footer-title">Réservation</div><p><a href="reservation.html">Réserver en ligne</a></p></div><div><div class="footer-title">Adresse</div><p>Beni M'Tir 8114, Tunisie</p></div></div></footer>
+    <script src="js/main.js"></script>
+  </body>
+</html>
+
+
+

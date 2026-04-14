@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900">
+  <rect width="1400" height="900" fill="#eef4eb"/>
+  <rect y="540" width="1400" height="360" fill="#88ab7a"/>
+  <path d="M0 520C190 470 290 530 460 480C640 430 760 330 980 365C1170 395 1260 345 1400 270V900H0Z" fill="#496c3f"/>
+  <path d="M0 640C180 610 340 680 560 650C760 620 930 540 1110 555C1250 565 1325 540 1400 510V900H0Z" fill="#2d5a27"/>
+  <ellipse cx="760" cy="670" rx="320" ry="95" fill="#a9d1d3" opacity="0.9"/>
+  <ellipse cx="760" cy="690" rx="260" ry="60" fill="#8ec0c2" opacity="0.9"/>
+  <path d="M185 585L275 405L365 585Z" fill="#254a22"/>
+  <rect x="258" y="585" width="24" height="95" fill="#4e331b"/>
+  <path d="M1080 575L1170 375L1260 575Z" fill="#254a22"/>
+  <rect x="1152" y="575" width="24" height="100" fill="#4e331b"/>
+  <circle cx="1180" cy="140" r="62" fill="#f0c777"/>
+  <text x="80" y="115" font-family="Poppins, Segoe UI, sans-serif" font-size="52" font-weight="700" fill="#2d5a27">Forêt et lac de Bni Mtir</text>
+  <text x="80" y="170" font-family="Poppins, Segoe UI, sans-serif" font-size="28" fill="#6d655c">Un cadre naturel apaisant pour le camping, la marche et la déconnexion.</text>
+</svg>

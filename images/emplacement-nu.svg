@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700">
+  <rect width="1200" height="700" fill="#f5f0e6"/>
+  <rect x="0" y="430" width="1200" height="270" fill="#6b925a"/>
+  <path d="M0 360C170 325 340 400 540 370C740 340 980 250 1200 300V700H0Z" fill="#2d5a27"/>
+  <rect x="145" y="470" width="910" height="145" rx="26" fill="#ead9bf" stroke="#8b5a2b" stroke-width="6" stroke-dasharray="18 12"/>
+  <path d="M250 470L325 360L400 470Z" fill="#8b5a2b"/>
+  <path d="M770 470L850 350L930 470Z" fill="#8b5a2b"/>
+  <text x="70" y="95" font-family="Poppins, Segoe UI, sans-serif" font-size="48" font-weight="700" fill="#2d5a27">Emplacement camping</text>
+  <text x="70" y="145" font-family="Poppins, Segoe UI, sans-serif" font-size="26" fill="#6d655c">80 m2 • Tente, caravane ou camping-car • Electricité en option</text>
+</svg>

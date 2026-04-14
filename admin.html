@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin - Camping Outdoors</title>
+    <meta name="description" content="Espace admin pour suivre clients, réservations et chiffre d'affaires." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container nav-wrap">
+        <a class="brand" href="index.html"><i class="fa-solid fa-campground"></i><span>Camping Outdoors - Bni Mtir</span></a>
+        <button class="menu-btn" id="menuBtn" aria-label="Ouvrir le menu"><i class="fa-solid fa-bars"></i></button>
+        <nav class="nav-links" id="navLinks">
+          <a href="index.html">Accueil</a>
+          <a href="hebergements.html">Hébergements</a>
+          <a href="tarifs.html">Tarifs & Groupes</a>
+          <a href="presentation.html">Présentation</a>
+          <a href="contact.html">Contact</a>
+          <a href="verification.html">Suivi réservation</a>
+          <a href="avis.html">Avis</a>
+          <a href="reservation.html">Réserver</a>
+          <a class="active" href="admin.html">Admin</a>
+        </nav>
+      </div>
+    </header>
+
+    <section class="page-banner">
+      <div class="container">
+        <div class="eyebrow"><i class="fa-solid fa-user-shield"></i> Espace administration</div>
+        <h1>Pilotage clients, réservations et chiffre d'affaires.</h1>
+        <p>Connexion pour gérer votre activité et analyser vos résultats sur la période de votre choix.</p>
+      </div>
+    </section>
+
+    <main>
+      <section class="container section-block fade-in" id="adminLoginSection">
+        <article class="surface">
+          <div class="surface-body">
+            <div class="section-title">
+              <h2>Connexion admin</h2>
+              <p>Accès réservé à l'administrateur.</p>
+            </div>
+            <form id="adminLoginForm" class="form-grid" method="post">
+              <div class="field">
+                <label for="adminUsername">Nom d'utilisateur</label>
+                <input id="adminUsername" autocomplete="username" required />
+              </div>
+              <div class="field">
+                <label for="adminPassword">Mot de passe</label>
+                <input id="adminPassword" type="password" autocomplete="current-password" required />
+              </div>
+              <div style="grid-column: 1 / -1;" class="button-row">
+                <button class="btn btn-primary" type="submit"><i class="fa-solid fa-lock"></i> Se connecter</button>
+              </div>
+            </form>
+            <div id="adminLoginMessage" aria-live="polite"></div>
+          </div>
+        </article>
+      </section>
+
+      <section class="container section-block fade-in" id="adminDashboardSection" style="display: none;">
+        <div class="section-head">
+          <div class="section-title">
+            <h2>Tableau de bord</h2>
+            <p>Vue globale de l'activité avec filtres temporels.</p>
+          </div>
+          <button class="btn btn-light" id="adminLogoutBtn" type="button"><i class="fa-solid fa-right-from-bracket"></i> Déconnexion</button>
+        </div>
+
+        <article class="surface">
+          <div class="surface-body">
+            <h3>Filtres de période</h3>
+            <div class="button-row">
+              <button type="button" class="btn btn-secondary" data-period="today">Aujourd'hui</button>
+              <button type="button" class="btn btn-secondary" data-period="week">Cette semaine</button>
+              <button type="button" class="btn btn-secondary" data-period="month">Ce mois</button>
+              <button type="button" class="btn btn-light" data-period="all">Tout afficher</button>
+            </div>
+            <div class="form-grid" style="margin-top: 12px;">
+              <div class="field">
+                <label for="fromDate">Du</label>
+                <input id="fromDate" type="date" />
+              </div>
+              <div class="field">
+                <label for="toDate">Au</label>
+                <input id="toDate" type="date" />
+              </div>
+              <div class="field" style="justify-content: end;">
+                <label>&nbsp;</label>
+                <button class="btn btn-primary" id="applyRangeBtn" type="button"><i class="fa-solid fa-filter"></i> Appliquer</button>
+              </div>
+            </div>
+            <div id="adminFilterMessage" class="subtle-note"></div>
+          </div>
+        </article>
+
+        <section class="stat-grid" style="margin-top: 18px;">
+          <article class="stat-card"><strong id="caDay">0 TND</strong><span>Chiffre d'affaires du jour</span></article>
+          <article class="stat-card"><strong id="caWeek">0 TND</strong><span>Chiffre d'affaires de la semaine</span></article>
+          <article class="stat-card"><strong id="caMonth">0 TND</strong><span>Chiffre d'affaires du mois</span></article>
+          <article class="stat-card"><strong id="caRange">0 TND</strong><span>Chiffre d'affaires sur la plage choisie</span></article>
+        </section>
+
+        <section class="stat-grid" style="margin-top: 18px;">
+          <article class="stat-card"><strong id="totalClients">0</strong><span>Total clients</span></article>
+          <article class="stat-card"><strong id="totalReservations">0</strong><span>Total réservations</span></article>
+          <article class="stat-card"><strong id="averageBasket">0 TND</strong><span>Panier moyen</span></article>
+          <article class="stat-card"><strong id="bestClientAmount">0 TND</strong><span>Meilleur client</span></article>
+        </section>
+
+        <section class="grid grid-2" style="margin-top: 18px;">
+          <article class="surface">
+            <div class="surface-body">
+              <h3>Graphique chiffre d'affaires (par date)</h3>
+              <p class="muted" id="chartPeriodLabel">Période complète</p>
+              <div id="revenueChart" class="revenue-chart"></div>
+            </div>
+          </article>
+
+          <article class="surface">
+            <div class="surface-body">
+              <h3>Top clients</h3>
+              <p class="muted">Classement par montant dépensé.</p>
+              <div id="topClients" class="top-clients-list"></div>
+            </div>
+          </article>
+        </section>
+
+        <section class="grid grid-2" style="margin-top: 18px;">
+          <article class="surface">
+            <div class="surface-body">
+              <h3>Partie clients</h3>
+              <p class="muted" id="clientsCount">0 client(s)</p>
+              <div class="table-wrap">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Nom</th>
+                      <th>Email</th>
+                      <th>Téléphone</th>
+                      <th>Nb réservations</th>
+                      <th>Montant dépensé</th>
+                      <th>1ère réservation</th>
+                      <th>Dernière réservation</th>
+                    </tr>
+                  </thead>
+                  <tbody id="clientsTableBody"></tbody>
+                </table>
+              </div>
+            </div>
+          </article>
+
+          <article class="surface">
+            <div class="surface-body">
+              <h3>Réservations</h3>
+              <p class="muted" id="reservationsCount">0 réservation(s)</p>
+              <div class="table-wrap">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Code</th>
+                      <th>Client</th>
+                      <th>Séjour</th>
+                      <th>Prix</th>
+                      <th>Statut</th>
+                      <th>Créée le</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody id="reservationsTableBody"></tbody>
+                </table>
+              </div>
+            </div>
+          </article>
+        </section>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-grid">
+        <div><div class="footer-title">Admin</div><p>Console de suivi et d'analyse.</p></div>
+        <div><div class="footer-title">Actions</div><p><a href="reservation.html">Nouvelle réservation</a></p><p><a href="verification.html">Suivi réservation</a></p></div>
+        <div><div class="footer-title">Support</div><p><a href="contact.html">Contacter l'équipe</a></p></div>
+      </div>
+    </footer>
+
+    <script src="js/calendrier.js"></script>
+    <script src="js/admin.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

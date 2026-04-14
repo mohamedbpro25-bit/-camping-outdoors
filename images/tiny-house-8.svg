@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#f5f0e6"/>
+  <path d="M0 395C180 360 320 425 470 392C610 360 725 290 800 300V600H0Z" fill="#577b46"/>
+  <rect x="160" y="225" width="485" height="220" rx="28" fill="#8b5a2b"/>
+  <path d="M125 255L403 102L680 255Z" fill="#70451f"/>
+  <rect x="230" y="294" width="105" height="151" rx="14" fill="#f7f2ea"/>
+  <rect x="380" y="296" width="105" height="82" rx="12" fill="#d5e7de"/>
+  <rect x="516" y="296" width="92" height="82" rx="12" fill="#d5e7de"/>
+  <text x="54" y="82" font-family="Poppins, Segoe UI, sans-serif" font-size="42" font-weight="700" fill="#2d5a27">Tiny House 8</text>
+  <text x="54" y="127" font-family="Poppins, Segoe UI, sans-serif" font-size="22" fill="#6d655c">6 personnes • Séjour nature</text>
+</svg>

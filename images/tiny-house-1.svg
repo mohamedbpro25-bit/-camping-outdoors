@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#f5f0e6"/>
+  <rect x="0" y="390" width="800" height="210" fill="#d9c3a5"/>
+  <rect x="180" y="240" width="430" height="210" rx="24" fill="#8b5a2b"/>
+  <path d="M145 270L395 120L645 270Z" fill="#6d421c"/>
+  <rect x="250" y="305" width="95" height="145" rx="12" fill="#f3ecdf"/>
+  <rect x="395" y="305" width="130" height="80" rx="12" fill="#cfe3da"/>
+  <rect x="545" y="265" width="28" height="90" rx="10" fill="#49301b"/>
+  <text x="60" y="80" font-family="Poppins, Segoe UI, sans-serif" font-size="42" font-weight="700" fill="#2d5a27">Tiny House 1</text>
+  <text x="60" y="125" font-family="Poppins, Segoe UI, sans-serif" font-size="22" fill="#6d655c">2 personnes • Terrasse • Chauffage</text>
+</svg>

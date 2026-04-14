@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Confirmation - Camping Outdoors</title>
+    <meta name="description" content="Confirmation de réservation avec code unique." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container nav-wrap">
+        <a class="brand" href="index.html"><i class="fa-solid fa-campground"></i><span>Camping Outdoors - Bni Mtir</span></a>
+        <button class="menu-btn" id="menuBtn" aria-label="Ouvrir le menu"><i class="fa-solid fa-bars"></i></button>
+        <nav class="nav-links" id="navLinks">
+          <a href="index.html">Accueil</a>
+          <a href="hebergements.html">Hébergements</a>
+          <a href="tarifs.html">Tarifs & Groupes</a>
+          <a href="presentation.html">Présentation</a>
+          <a href="contact.html">Contact</a>
+          <a href="verification.html">Suivi réservation</a>
+          <a href="avis.html">Avis</a>
+          <a href="reservation.html">Réserver</a>
+        </nav>
+      </div>
+    </header>
+
+    <section class="page-banner">
+      <div class="container">
+        <div class="eyebrow"><i class="fa-solid fa-badge-check"></i> Réservation confirmée</div>
+        <h1>Votre séjour est enregistré.</h1>
+        <p>Le code affiché ici permet de retrouver la réservation, vérifier son statut et lancer une annulation si nécessaire.</p>
+      </div>
+    </section>
+
+    <main>
+      <section class="container section-block fade-in">
+        <div class="confirmation-layout">
+          <article class="surface">
+            <div class="surface-body">
+              <div id="confirmationResult" class="result-box"></div>
+              <div class="button-row">
+                <button class="btn btn-light" id="copyCodeBtn" type="button"><i class="fa-solid fa-copy"></i> Copier le code</button>
+                <a class="btn btn-secondary" id="verifyReservationBtn" href="verification.html"><i class="fa-solid fa-magnifying-glass"></i> Suivi de ma réservation</a>
+              </div>
+            </div>
+          </article>
+          <div class="grid">
+            <article class="email-mock">
+              <p><strong><i class="fa-solid fa-envelope-circle-check"></i> Simulation d'email</strong></p>
+              <p>Un email de confirmation a été envoyé avec le récapitulatif, votre code unique et les informations de séjour.</p>
+            </article>
+            <article class="panel-box">
+              <h3>Prochaines étapes</h3>
+              <ul class="check-list">
+                <li><i class="fa-solid fa-check"></i> Conservez votre code de réservation</li>
+                <li><i class="fa-solid fa-check"></i> Vérifiez vos informations avant votre arrivée</li>
+                <li><i class="fa-solid fa-check"></i> Contactez l'équipe pour toute demande spéciale</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer"><div class="container footer-grid"><div><div class="footer-title">Confirmation</div><p>Le code unique devient le point d'entrée du service après réservation.</p></div><div><div class="footer-title">Suivi réservation</div><p><a href="verification.html">Retrouver la réservation</a></p></div><div><div class="footer-title">Accueil</div><p><a href="index.html">Retour au site</a></p></div></div></footer>
+
+    <script src="js/calendrier.js"></script>
+    <script src="js/reservation.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
+
+
+

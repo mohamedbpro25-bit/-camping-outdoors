@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#f8efe1"/>
+  <rect x="0" y="405" width="800" height="195" fill="#cbb28f"/>
+  <rect x="175" y="245" width="450" height="205" rx="28" fill="#9a6230"/>
+  <path d="M150 270L400 130L650 270Z" fill="#71461f"/>
+  <rect x="255" y="310" width="100" height="140" rx="12" fill="#f7f1e7"/>
+  <rect x="398" y="305" width="132" height="84" rx="14" fill="#d6e7dc"/>
+  <circle cx="680" cy="120" r="46" fill="#efcb7c"/>
+  <text x="58" y="82" font-family="Poppins, Segoe UI, sans-serif" font-size="42" font-weight="700" fill="#2d5a27">Tiny House 2</text>
+  <text x="58" y="127" font-family="Poppins, Segoe UI, sans-serif" font-size="22" fill="#6d655c">2 personnes • Bois • Nature</text>
+</svg>
